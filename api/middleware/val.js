@@ -44,11 +44,15 @@ const imgvalidation = async(file)=>{
 const roleval = async(role) =>{
     if(role == undefined)
     return Promise.resolve(true)
+    role =  parseInt(role)
+    console.log(role)
     if(role!==1 && role !==0)
     return Promise.reject('role can be 1 or 0')
     return Promise.resolve(true)
 }
 const passval =async (password)=>{
+    if(password == undefined)
+    return Promise.resolve(true)
     try{
        await includenum(password);
        await letter(password)

@@ -90,7 +90,7 @@ router.get('/:name',/*auth.cpassword.authenticateToken,*/ async(req,res,next)=>{
   res.send(doc)
   next()
 })
-router.put('/:username',auth.cpassword.authenticateToken,val.validation,auth.cpassword.addpassword,  async (req,res,next)=>{ 
+router.put('/:username',auth.cpassword.authenticateToken,val.validation,  async (req,res,next)=>{ 
   const name = req.params.name;
   try{
     if(name!==req.params.username)
